@@ -11,9 +11,17 @@ plugin "terraform" {
   preset = "all"
 }
 
-# plugin "azurerm" {
-#   enabled = true
+plugin "azurerm" {
+  enabled = true
 
-#   source  = "github.com/terraform-linters/tflint-ruleset-azurerm"
-#   version = "0.28.0"
-# }
+  source  = "github.com/terraform-linters/tflint-ruleset-azurerm"
+  version = "0.28.0"
+}
+
+rule "terraform_documented_variables" {
+  enabled = false
+}
+
+rule "terraform_documented_outputs" {
+  enabled = false
+}
