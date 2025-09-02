@@ -191,9 +191,13 @@ Default: `{}`
 
 The following outputs are exported:
 
-### <a name="output_dummy"></a> [dummy](#output\_dummy)
+### <a name="output_log_analytics_workspace_id"></a> [log\_analytics\_workspace\_id](#output\_log\_analytics\_workspace\_id)
 
-Description: A dummy output for demonstration purposes
+Description: The ID of the Log Analytics Workspace
+
+### <a name="output_log_analytics_workspace_name"></a> [log\_analytics\_workspace\_name](#output\_log\_analytics\_workspace\_name)
+
+Description: The Name of the Log Analytics Workspace
 <!-- END_TF_DOCS -->
 
 ## Contributions
