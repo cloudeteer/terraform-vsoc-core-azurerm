@@ -1,3 +1,9 @@
+variable "azure_location" {
+  description = "The Azure region for the resources to be deployed."
+  type        = string
+  default     = "germanywestcentral"
+}
+
 variable "key_vault_bypass" {
   description = "Bypass value for the Key Vault."
   type        = string
@@ -16,7 +22,6 @@ variable "key_vault_ip_rules" {
   default     = []
 }
 
-# Key Vault
 variable "key_vault_name_prefix" {
   description = "The name of the Key Vault."
   type        = string
@@ -40,14 +45,6 @@ variable "key_vault_vnet_ids" {
   default     = []
 }
 
-# General
-variable "location" {
-  description = "The Azure region for the resources to be deployed."
-  type        = string
-  default     = "germanywestcentral"
-}
-
-# Log Analytics Workspace
 variable "log_analytics_workspace_name" {
   description = "The name of the Log Analytics Workspace."
   type        = string
@@ -87,7 +84,6 @@ variable "purge_protection_enabled" {
   default     = true
 }
 
-# Resource Group
 variable "resource_group_name" {
   description = "The name of the resource group."
   type        = string
@@ -99,7 +95,6 @@ variable "resource_group_name" {
   }
 }
 
-# Sentinel
 variable "sentinel_customer_managed_key_enabled" {
   description = "Enable customer managed key for Sentinel"
   type        = bool

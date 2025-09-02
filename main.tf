@@ -2,7 +2,7 @@
 resource "azurerm_resource_group" "vsoc_service" {
   name     = var.resource_group_name
   tags     = local.tags
-  location = var.location
+  location = var.azure_location
 }
 
 # Key Vault
@@ -15,7 +15,7 @@ resource "random_string" "key_vault_suffix" {
 resource "azurerm_key_vault" "secrets" {
   name                       = "${var.key_vault_name_prefix}-${random_string.key_vault_suffix.result}"
   tags                       = local.tags
-  location                   = var.location
+  location                   = var.azure_location
   resource_group_name        = azurerm_resource_group.vsoc_service.name
   tenant_id                  = var.tenant_id
   sku_name                   = var.key_vault_sku
@@ -34,7 +34,7 @@ resource "azurerm_key_vault" "secrets" {
 resource "azurerm_log_analytics_workspace" "logs" {
   name                = var.log_analytics_workspace_name
   tags                = local.tags
-  location            = var.location
+  location            = var.azure_location
   resource_group_name = azurerm_resource_group.vsoc_service.name
   sku                 = var.log_analytics_workspace_sku
   retention_in_days   = var.log_analytics_workspace_retention_time

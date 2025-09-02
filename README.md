@@ -67,6 +67,14 @@ Type: `string`
 
 The following input variables are optional (have default values):
 
+### <a name="input_azure_location"></a> [azure\_location](#input\_azure\_location)
+
+Description: The Azure region for the resources to be deployed.
+
+Type: `string`
+
+Default: `"germanywestcentral"`
+
 ### <a name="input_key_vault_bypass"></a> [key\_vault\_bypass](#input\_key\_vault\_bypass)
 
 Description: Bypass value for the Key Vault.
@@ -114,14 +122,6 @@ Description: VNet IDs for the Key Vault.
 Type: `list(string)`
 
 Default: `[]`
-
-### <a name="input_location"></a> [location](#input\_location)
-
-Description: The Azure region for the resources to be deployed.
-
-Type: `string`
-
-Default: `"germanywestcentral"`
 
 ### <a name="input_log_analytics_workspace_name"></a> [log\_analytics\_workspace\_name](#input\_log\_analytics\_workspace\_name)
 
