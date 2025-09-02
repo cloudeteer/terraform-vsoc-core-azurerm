@@ -1,16 +1,19 @@
 variable "key_vault_bypass" {
-  type    = string
-  default = "AzureServices"
+  description = "Bypass value for the Key Vault."
+  type        = string
+  default     = "AzureServices"
 }
 
 variable "key_vault_default_action" {
-  type    = string
-  default = "Deny"
+  description = "Default action for the Key Vault."
+  type        = string
+  default     = "Deny"
 }
 
 variable "key_vault_ip_rules" {
-  type    = list(string)
-  default = []
+  description = "IP Rules for the Key Vault"
+  type        = list(string)
+  default     = []
 }
 
 # Key Vault
@@ -32,8 +35,9 @@ variable "key_vault_sku" {
 }
 
 variable "key_vault_vnet_ids" {
-  type    = list(string)
-  default = []
+  description = "VNet IDs for the Key Vault."
+  type        = list(string)
+  default     = []
 }
 
 # General

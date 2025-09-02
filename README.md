@@ -69,7 +69,7 @@ The following input variables are optional (have default values):
 
 ### <a name="input_key_vault_bypass"></a> [key\_vault\_bypass](#input\_key\_vault\_bypass)
 
-Description: n/a
+Description: Bypass value for the Key Vault.
 
 Type: `string`
 
@@ -77,7 +77,7 @@ Default: `"AzureServices"`
 
 ### <a name="input_key_vault_default_action"></a> [key\_vault\_default\_action](#input\_key\_vault\_default\_action)
 
-Description: n/a
+Description: Default action for the Key Vault.
 
 Type: `string`
 
@@ -85,7 +85,7 @@ Default: `"Deny"`
 
 ### <a name="input_key_vault_ip_rules"></a> [key\_vault\_ip\_rules](#input\_key\_vault\_ip\_rules)
 
-Description: n/a
+Description: IP Rules for the Key Vault
 
 Type: `list(string)`
 
@@ -109,7 +109,7 @@ Default: `"standard"`
 
 ### <a name="input_key_vault_vnet_ids"></a> [key\_vault\_vnet\_ids](#input\_key\_vault\_vnet\_ids)
 
-Description: n/a
+Description: VNet IDs for the Key Vault.
 
 Type: `list(string)`
 
@@ -193,7 +193,7 @@ The following outputs are exported:
 
 ### <a name="output_dummy"></a> [dummy](#output\_dummy)
 
-Description: n/a
+Description: A dummy output for demonstration purposes
 <!-- END_TF_DOCS -->
 
 ## Contributions

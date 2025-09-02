@@ -1,3 +1,4 @@
 output "dummy" {
-  value = "dummy"
+  value       = "dummy"
+  description = "A dummy output for demonstration purposes"
 }
