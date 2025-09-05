@@ -5,41 +5,30 @@ variables {
   sentinel_serviceprincipal_id = "11111111-1111-1111-1111-111111111111"
 }
 
-run "should_abbort_creating_invalid_resource_group" {
+run "should_pass_with_valid_resource_names" {
   command = plan
 
-  expect_failures = [
-    var.resource_group_name
-  ]
-
   variables {
-    resource_group_name = "badname"
+    resource_group_name = "rg-vsoc-prod-gwc-02"
+    key_vault_name_prefix = "kvvsocprodgwc"
+    log_analytics_workspace_name = "log-vsoc-prod-gwc-02"
   }
 
 }
 
-run "should_abbort_creating_invalid_key_vault" {
+run "should_fail_with_invalid_resource_names" {
   command = plan
 
-  expect_failures = [
-    var.key_vault_name_prefix
-  ]
-
   variables {
-    key_vault_name_prefix = "badname"
+    resource_group_name = "rg-vsoc-shouldfail-gwc-02"
+    key_vault_name_prefix = "kvshouldfailprodgwc"
+    log_analytics_workspace_name = "log-vsoc-prod-gwc"
   }
 
-}
-
-run "should_abbort_creating_invalid_law" {
-  command = plan
-
   expect_failures = [
-    var.log_analytics_workspace_name,
+    var.resource_group_name,
+    var.key_vault_name_prefix,
+    var.log_analytics_workspace_name
   ]
-
-  variables {
-    log_analytics_workspace_name = "badname"
-  }
 
 }
