@@ -6,9 +6,9 @@ terraform {
 
   required_providers {
     # based on the version constraints use the lowest version of the provider that is compatible
-    random = {
-      source  = "hashicorp/random"
-      version = "3.1.0"
-    }
+    # random = {
+    #   source  = "hashicorp/random"
+    #   version = "3.1.0"
+    # }
   }
 }
