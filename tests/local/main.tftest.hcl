@@ -36,7 +36,7 @@ run "should_abbort_creating_invalid_law" {
 
   expect_failures = [
     var.log_analytics_workspace_name,
-   ]
+  ]
 
   variables {
     log_analytics_workspace_name = "badname"
