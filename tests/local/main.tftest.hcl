@@ -9,8 +9,8 @@ run "should_pass_with_valid_resource_names" {
   command = plan
 
   variables {
-    resource_group_name = "rg-vsoc-prod-gwc-02"
-    key_vault_name_prefix = "kvvsocprodgwc"
+    resource_group_name          = "rg-vsoc-prod-gwc-02"
+    key_vault_name_prefix        = "kvvsocprodgwc"
     log_analytics_workspace_name = "log-vsoc-prod-gwc-02"
   }
 
@@ -20,8 +20,8 @@ run "should_fail_with_invalid_resource_names" {
   command = plan
 
   variables {
-    resource_group_name = "rg-vsoc-shouldfail-gwc-02"
-    key_vault_name_prefix = "kvshouldfailprodgwc"
+    resource_group_name          = "rg-vsoc-shouldfail-gwc-02"
+    key_vault_name_prefix        = "kvshouldfailprodgwc"
     log_analytics_workspace_name = "log-vsoc-prod-gwc"
   }
 
