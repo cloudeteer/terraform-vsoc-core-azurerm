@@ -62,22 +62,8 @@ resource "azurerm_monitor_diagnostic_setting" "sentinel_auditing" {
 }
 
 # Set Sentinel Playbook permissions
-# TODO: Replace with dynamic lookup below (pipeline permissions needed)
 resource "azurerm_role_assignment" "sentinel_playbook_permissions" {
   scope                = azurerm_resource_group.vsoc_service.id
   role_definition_name = "Microsoft Sentinel Automation Contributor"
   principal_id         = var.sentinel_serviceprincipal_id
 }
-
-# DYNAMIC LOOKUP (replace later)
-# # Set Sentinel Playbook permissions
-# ## Get the Sentinel service principal
-# data "azuread_service_principal" "sentinel_serviceprincipal" {
-#   display_name = "Azure Security Insights"
-# }
-# ## Give the serivce principal Contributor permissions
-# resource "azurerm_role_assignment" "sentinel_playbook_permissions" {
-#   scope                = azurerm_resource_group.vsoc-rg.id
-#   role_definition_name = "Microsoft Sentinel Playbook Contributor"
-#   principal_id         = data.azuread_service_principal.sentinel_serviceprincipal.object_id
-# }

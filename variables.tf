@@ -101,7 +101,6 @@ variable "sentinel_customer_managed_key_enabled" {
   default     = false
 }
 
-# TODO: Delete later for dynamic lookup
 variable "sentinel_serviceprincipal_id" {
   description = "The Sentinel Service principal ID."
   type        = string
