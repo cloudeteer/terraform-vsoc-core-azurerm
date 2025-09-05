@@ -1,25 +1,34 @@
-run "should_fail_on_short_input" {
-  command = plan
+mock_provider "azurerm" { source = "./tests/local/mocks" }
 
-  variables {
-    example_variable = "ex"
-  }
-
-  # https://developer.hashicorp.com/terraform/language/tests#expecting-failures
-  expect_failures = [
-    var.example_variable,
-  ]
+variables {
+  tenant_id                    = "00000000-0000-0000-0000-000000000000"
+  sentinel_serviceprincipal_id = "11111111-1111-1111-1111-111111111111"
 }
 
-run "test_output" {
+run "should_pass_with_valid_resource_names" {
   command = plan
 
   variables {
-    example_variable = "example value"
+    resource_group_name          = "rg-vsoc-prod-gwc-02"
+    key_vault_name_prefix        = "kvvsocprodgwc"
+    log_analytics_workspace_name = "log-vsoc-prod-gwc-02"
   }
 
-  assert {
-    condition     = output.example_output == "example value"
-    error_message = "Output example_output not equal to expected value"
+}
+
+run "should_fail_with_invalid_resource_names" {
+  command = plan
+
+  variables {
+    resource_group_name          = "rg-vsoc-shouldfail-gwc-02"
+    key_vault_name_prefix        = "kvshouldfailprodgwc"
+    log_analytics_workspace_name = "log-vsoc-prod-gwc"
   }
+
+  expect_failures = [
+    var.resource_group_name,
+    var.key_vault_name_prefix,
+    var.log_analytics_workspace_name
+  ]
+
 }
